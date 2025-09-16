@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Clock, Code, Star, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
   title: string;
@@ -101,9 +102,11 @@ const ProjectCard = ({
           </div>
         </div>
         
-        <Button className="w-full" variant="outline">
-          View Project
-          <ExternalLink className="ml-2 h-4 w-4" />
+        <Button className="w-full" variant="outline" asChild>
+          <Link to={`/project/${title.toLowerCase().replace(/\s+/g, '-')}`}>
+            View Project
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </Link>
         </Button>
       </CardContent>
     </Card>

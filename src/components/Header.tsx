@@ -53,8 +53,8 @@ const Header = () => {
               <Github className="h-4 w-4" />
             </a>
           </Button>
-          <Button variant="outline" size="sm">
-            Sign In
+          <Button variant="outline" size="sm" asChild>
+            <Link to="/signin">Sign In</Link>
           </Button>
         </div>
       </div>

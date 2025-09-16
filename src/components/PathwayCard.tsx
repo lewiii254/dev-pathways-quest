@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Clock, Users, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface PathwayCardProps {
   title: string;
@@ -87,8 +88,10 @@ const PathwayCard = ({
           </div>
         )}
         
-        <Button className="w-full bg-gradient-hero hover:opacity-90">
-          {progress > 0 ? "Continue Learning" : "Start Pathway"}
+        <Button className="w-full bg-gradient-hero hover:opacity-90" asChild>
+          <Link to={`/pathway/${title.toLowerCase().replace(/\s+/g, '-')}`}>
+            {progress > 0 ? "Continue Learning" : "Start Pathway"}
+          </Link>
         </Button>
       </CardContent>
     </Card>
